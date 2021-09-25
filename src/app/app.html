@@ -1,0 +1,23 @@
+<ion-menu [content]="content" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}"></ion-icon>
+        {{p.title}}
+      </button>
+
+      <button menuClose ion-item (click)="logout()">
+        &nbsp;Sair
+        <ion-icon class="sair" name="md-exit"></ion-icon>
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

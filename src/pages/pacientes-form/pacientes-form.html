@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{titulo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="paciente.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Telefone</ion-label>
+      <ion-input type="text" [(ngModel)]="paciente.telefone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Endereço</ion-label>
+      <ion-input type="text" [(ngModel)]="paciente.endereco"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Cidade</ion-label>
+      <ion-input type="text" [(ngModel)]="paciente.cidade"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>UF</ion-label>
+      <ion-input type="text" [(ngModel)]="paciente.uf"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Convênio</ion-label>
+      <ion-input type="text" [(ngModel)]="paciente.convenio"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label stacked>Status</ion-label>
+      <ion-input type="text" [(ngModel)]="paciente.status"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+
+  <button ion-button block (click)="salvar()">Salvar</button>
+
+  <button ion-button block color="danger" (click)="excluir()" *ngIf="pacienteID !== undefined">Excluir</button>
+
+</ion-content>

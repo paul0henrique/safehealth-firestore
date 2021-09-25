@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{titulo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="item.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>CRM</ion-label>
+      <ion-input type="text" [(ngModel)]="item.crm"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Telefone</ion-label>
+      <ion-input type="text" [(ngModel)]="item.telefone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Especialidades</ion-label>
+      <ion-input type="text" [(ngModel)]="item.especialidades"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Status</ion-label>
+      <ion-input type="text" [(ngModel)]="item.status"></ion-input>
+    </ion-item>
+
+  
+  </ion-list>
+
+  <button ion-button block (click)="salvar()">Salvar</button>
+
+  <button ion-button block color="danger" (click)="excluir()" *ngIf="itemID !== undefined">Excluir</button>
+
+</ion-content>
