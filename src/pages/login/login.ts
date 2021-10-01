@@ -38,7 +38,7 @@ export class LoginPage {
         loader.dismiss();
         console.log('user', user);
 
-        this.storage.set('usuario', user.uid)
+        this.userProvider.salvarLocal(user.uid)
           .then(_data => {
             this.navCtrl.setRoot(HomePage);
           });

@@ -5,8 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
+import { User } from 'firebase';
+import { UserProvider } from '../providers/user/user';
 
-//import {Storage} from "@ionic/storage";
+import {Storage} from "@ionic/storage";
 
 @Component({
   templateUrl: 'app.html'
@@ -21,15 +23,19 @@ export class MyApp {
   constructor(public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    //public storage: Storage
+    public storage: Storage,
+    public userProvider: UserProvider
+    
     ) {
     this.initializeApp();
 
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'home' },
+      
       { title: 'Médicos', component: 'MedicosListPage', icon: 'pulse'},
       { title: 'Pacientes', component: 'PacientesListPage', icon: 'people'},
-      { title: 'Clínicas', component:  'ClinicasListPage', icon:'md-medkit'}
+      { title: 'Clínicas', component:  'ClinicasListPage', icon:'md-medkit'},
+      { title: 'Configurações', component: 'ConfiguracoesPage', icon: 'settings' }
     ];
 
   }
@@ -38,6 +44,18 @@ export class MyApp {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+
+      this.userProvider.lerLocal().then(_usuario => {
+        console.log('AP COMPONENT', _usuario);
+
+        if(_usuario && _usuario.length > 0) {
+          this.rootPage = HomePage;
+        } else {
+          this.rootPage = 'LoginPage';
+        }
+
+      })
     });
   }
 
@@ -45,7 +63,9 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
-  logout(){
-    this.nav.setRoot('LoginPage');
+  logout() {
+    this.userProvider.removeLocal().then(_data => {
+      this.nav.setRoot('LoginPage');
+    });
   }
 }

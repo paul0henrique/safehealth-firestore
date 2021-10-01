@@ -47,6 +47,9 @@ export class ClinicasFormPage {
   salvar() {
     console.log(this.item);
 
+    this.item.lat = parseFloat(this.item.lat + '');
+    this.item.lng = parseFloat(this.item.lng + '');
+
     if(this.itemID) { // atualizar
 
       this.clinicaProvider.atualizarFS(this.itemID, this.item).then(_ => {

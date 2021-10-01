@@ -2,15 +2,21 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Storage } from "@ionic/storage";
 
 @Injectable()
 export class UserProvider {
 
   constructor(public http: HttpClient,
+      public storage: Storage,
       public afd: AngularFireDatabase,
       public afa: AngularFireAuth
     ) {
     console.log('Hello UserProvider Provider');
+  }
+
+  byId(id: string){
+    return this.afd.object('/usuarios/' + id).valueChanges();
   }
 
   login(email, senha) {
@@ -41,4 +47,17 @@ export class UserProvider {
   listarUsuarios() {
     return this.afd.list('/usuarios').valueChanges();
   }
+
+  salvarLocal(id){
+    return this.storage.set('usuario', id);
+  }
+
+  lerLocal(){
+    return this.storage.get('usuario');
+  }
+
+  removeLocal() {
+    return this.storage.remove('usuario');
+  }
+
 }

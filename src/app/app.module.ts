@@ -13,12 +13,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from "angularfire2/storage";
 import { UserProvider } from '../providers/user/user';
 import { IonicStorageModule } from '@ionic/storage';
 import { env } from '../env/env';
 import { PacienteProvider } from '../providers/paciente/paciente';
 import { MedicoProvider } from '../providers/medico/medico';
 import { ClinicaProvider } from '../providers/clinica/clinica';
+import { FirebaseStorageProvider } from '../providers/firebase-storage/firebase-storage';
 
 
 
@@ -37,6 +39,7 @@ import { ClinicaProvider } from '../providers/clinica/clinica';
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFireStorageModule,
     
   ],
   bootstrap: [IonicApp],
@@ -51,7 +54,8 @@ import { ClinicaProvider } from '../providers/clinica/clinica';
     UserProvider,
     PacienteProvider,
     MedicoProvider,
-    ClinicaProvider
+    ClinicaProvider,
+    FirebaseStorageProvider
   ]
 })
 export class AppModule {}
