@@ -1,34 +1,49 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Cadastro</ion-title>
-  </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="content">
 
-  <ion-list>
+  <ion-grid class="grid-logo">
+    <ion-row align-items-center justify-content-center>
+      <ion-col col-12 align-self-center>
+        <img src="../../assets/imgs/logo.png" />        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-      <ion-item>
-        <ion-label stacked>Nome</ion-label>
-        <ion-input type="text" [(ngModel)]="nome"></ion-input>
-      </ion-item>
-    
-    
-      <ion-item>
-        <ion-label stacked>Email</ion-label>
-        <ion-input type="text" [(ngModel)]="email"></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label stacked>Senha</ion-label>
-        <ion-input type="password" [(ngModel)]="senha"></ion-input>
-      </ion-item>
-    
-      <button ion-button block primary (click)="cadastrar()">Cadastrar</button>
-    
-    </ion-list>
+  <ion-grid class="grid-list">
+    <ion-row align-items-center justify-content-center>
+      <ion-col align-self-center col-12 col-lg-4 col-xl-4>
+        <ion-list class="content-input">
+
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="nome" placeholder="Nome"></ion-input>
+            </ion-item>
+          
+          
+            <ion-item class="margin-input-top"> 
+              <ion-input type="text" [(ngModel)]="email" placeholder="E-mail"></ion-input>
+            </ion-item>
+          
+            <ion-item class="margin-input-top">
+              <ion-input type="password" [(ngModel)]="senha" placeholder="Senha"></ion-input>
+            </ion-item>
+          
+            <button  class="filled-button" ion-button block primary (click)="cadastrar()">Cadastrar</button>
+          
+          </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
     
   </ion-content>
+
+  <ion-footer>
+    <ion-toolbar transparent>
+      <ion-title>
+        <button class="clear-button" ion-button block color="primary" clear (click)="login()">Já tem um conta? Entre agora</button>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+

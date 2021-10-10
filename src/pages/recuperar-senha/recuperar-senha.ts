@@ -42,4 +42,8 @@ export class RecuperarSenhaPage {
     alert.present();
   }
 
+  login(){
+    this.navCtrl.push('LoginPage')
+  }
+
 }

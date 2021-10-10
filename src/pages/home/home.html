@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Clínicas disponíveis</ion-title>
+    <ion-title>Clínicas ativas</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -14,6 +14,15 @@
     <div #map id="map"></div>
     
   </ion-grid>
+
+  <ion-fab bottom left>
+    <button class="filled-button" ion-fab mini><ion-icon name="arrow-dropright"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button ion-fab class="filled-button" (click)="gerarCSV()"><ion-icon color="light" name="apps"></ion-icon></button>
+      <button ion-fab class="filled-button" (click)="gerarExcel()"><ion-icon color="light" name="attach"></ion-icon></button>
+      <button ion-fab class="filled-button" (click)="gerarPDF()"><ion-icon color="light" name="document"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
 
 
   

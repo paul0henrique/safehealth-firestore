@@ -1,3 +1,35 @@
 page-recuperar-senha {
 
+    font-family: 'Poppins',sans-serif;
+
+        .content{
+            background-image: url('../../assets/imgs/background3.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .grid-logo{
+            width: 200px;
+            margin-top: 5em;
+        }
+
+        .content-input {
+        
+            ion-item {
+                border-radius: 30px;
+                background-color: rgba(255, 255, 255, 0.3) !important;
+
+                ion-input {
+                    color: white;
+                }
+
+                ::placeholder {
+                    color: #ddd;
+                }
+            } 
+    }
+        .button-inner{
+            color: white !important;
+        }
+
 }

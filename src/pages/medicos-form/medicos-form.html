@@ -1,43 +1,44 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar>
     <ion-title>{{titulo}}</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="content">
 
-  <ion-list>
+  <ion-grid class="grid-list">
+    <ion-row align-items-center justify-content-center>
+      <ion-col align-self-center col-12 col-lg-4 col-xl-4>
 
-    <ion-item>
-      <ion-label stacked>Nome</ion-label>
-      <ion-input type="text" [(ngModel)]="item.nome"></ion-input>
-    </ion-item>
+        <ion-list class="content-input">
 
-    <ion-item>
-      <ion-label stacked>CRM</ion-label>
-      <ion-input type="text" [(ngModel)]="item.crm"></ion-input>
-    </ion-item>
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="item.nome" placeholder="Nome"></ion-input>
+          </ion-item>
+      
+          <ion-item class="margin-input-top">
+            <ion-input type="text" [(ngModel)]="item.crm" placeholder="CRM"></ion-input>
+          </ion-item>
+      
+          <ion-item class="margin-input-top">
+            <ion-input type="text" [(ngModel)]="item.telefone" placeholder="Telefone"></ion-input>
+          </ion-item>
+      
+          <ion-item class="margin-input-top">
+            <ion-input type="text" [(ngModel)]="item.especialidades" placeholder="Especialidades"></ion-input>
+          </ion-item>
+      
+          <ion-item class="margin-input-top">
+            <ion-input type="text" [(ngModel)]="item.status" placeholder="Status"></ion-input>
+          </ion-item>
+      
+        
+        </ion-list>
 
-    <ion-item>
-      <ion-label stacked>Telefone</ion-label>
-      <ion-input type="text" [(ngModel)]="item.telefone"></ion-input>
-    </ion-item>
+          <button class="filled-button" ion-button block (click)="salvar()">Salvar</button>
 
-    <ion-item>
-      <ion-label stacked>Especialidades</ion-label>
-      <ion-input type="text" [(ngModel)]="item.especialidades"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label stacked>Status</ion-label>
-      <ion-input type="text" [(ngModel)]="item.status"></ion-input>
-    </ion-item>
-
-  
-  </ion-list>
-
-  <button ion-button block (click)="salvar()">Salvar</button>
-
-  <button ion-button block color="danger" (click)="excluir()" *ngIf="itemID !== undefined">Excluir</button>
-
+          <button class="danger-button" ion-button block color="danger" (click)="excluir()" *ngIf="itemID !== undefined">Excluir</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>

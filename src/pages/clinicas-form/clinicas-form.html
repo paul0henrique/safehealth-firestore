@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,44 +7,46 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="content">
 
-  <ion-list>
+  <ion-grid class="grid-list">
+    <ion-row align-items-center justify-content-center>
+      <ion-col align-self-center col-12 col-lg-4 col-xl-4>
 
-    <ion-item>
-      <ion-label stacked>Nome</ion-label>
-      <ion-input type="text" [(ngModel)]="item.nome"></ion-input>
-    </ion-item>
+        <ion-list class="content-input">
 
-    <ion-item>
-      <ion-label stacked>Cidade</ion-label>
-      <ion-input type="text" [(ngModel)]="item.cidade"></ion-input>
-    </ion-item>
+          <ion-item>
+            <ion-input type="text" [(ngModel)]="item.nome" placeholder="Nome"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label stacked>UF</ion-label>
-      <ion-input type="text" [(ngModel)]="item.uf"></ion-input>
-    </ion-item>
+          <ion-item class="margin-input-top">
+            <ion-input type="text" [(ngModel)]="item.cidade" placeholder="Cidade"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Endereço</ion-label>
-      <ion-input type="text" [(ngModel)]="item.endereco"></ion-input>
-    </ion-item>
+          <ion-item class="margin-input-top">
+            <ion-input type="text" [(ngModel)]="item.uf" placeholder="UF"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Latitude</ion-label>
-      <ion-input type="text" [(ngModel)]="item.lat"></ion-input>
-    </ion-item>
+          <ion-item class="margin-input-top">
+            <ion-input type="text" [(ngModel)]="item.endereco" placeholder="Endereço"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Longitude</ion-label>
-      <ion-input type="text" [(ngModel)]="item.lng"></ion-input>
-    </ion-item>
-  
-  </ion-list>
+          <ion-item class="margin-input-top">
+            <ion-input type="text" [(ngModel)]="item.lat" placeholder="Latitude"></ion-input>
+          </ion-item>
 
-  <button ion-button block (click)="salvar()">Salvar</button>
+          <ion-item class="margin-input-top">
+            <ion-input type="text" [(ngModel)]="item.lng" placeholder="Longitude"></ion-input>
+          </ion-item>
+        
+        </ion-list>
 
-  <button ion-button block color="danger" (click)="excluir()" *ngIf="itemID !== undefined">Excluir</button>
+        <button ion-button block class="filled-button" (click)="salvar()">Salvar</button>
+
+        <button ion-button block class="danger-button" (click)="excluir()" *ngIf="itemID !== undefined">Excluir</button>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

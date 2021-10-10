@@ -1,20 +1,72 @@
-// http://ionicframework.com/docs/theming/
-
-
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
 
 .sair{
     float: left;
+}
+
+.toolbar-background-md{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,255,0.6082808123249299) 0%, rgba(0,212,255,1) 100%);
+
+}
+.toolbar-title-md{
+    color: white;
+    font-family: 'Poppins',sans-serif;
+}
+
+.label-md{
+    font-family: 'Poppins',sans-serif;
+    font-size: 14px;
+}
+
+
+.text-input-md{
+    font-family: 'Poppins',sans-serif;
+    font-size: 14px;
+}
+
+.filled-button{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,255,0.6082808123249299) 0%, rgba(0,212,255,1) 100%);
+    border-radius: 25px;
+    font-family: 'Poppins',sans-serif;
+    text-transform: capitalize;
+    margin-top: 1em;
+}
+
+.clear-button{
+    font-family: 'Poppins',sans-serif;
+    color: white;
+    text-transform: none;
+}
+
+.bar-button-md{
+    color: white;
+}
+
+.danger-button{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(88,2,2,0.6082808123249299) 0%, rgba(242,0,0,0.7315301120448179) 100%);
+    border-radius: 25px;
+    font-family: 'Poppins',sans-serif;
+    text-transform: capitalize;
+}
+
+.color-footer{
+    color: black;
+}
+
+.content-input {
+    
+    ion-item {
+        border-radius: 30px;
+        background-color: rgba(255, 255, 255, 0.3) !important;
+
+        ion-input {
+            color: white;
+        }
+
+        ::placeholder {
+            color: #ddd;
+        }
+    }
 }

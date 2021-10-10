@@ -61,4 +61,8 @@ export class CadastroPage {
     alert.present();
   }
 
+  login() {
+    this.navCtrl.push('LoginPage');
+  }
+
 }

@@ -1,3 +1,42 @@
 page-cadastro {
 
+    font-family: 'Poppins',sans-serif;
+
+        .content{
+            background-image: url('../../assets/imgs/background2.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .grid-logo{
+            width: 200px;
+        }
+
+        .content-input {
+    
+            ion-item {
+                border-radius: 30px;
+                background-color: rgba(255, 255, 255, 0.3) !important;
+    
+                ion-input {
+                    color: white;
+                }
+    
+                ::placeholder {
+                    color: #ddd;
+                }
+            } 
+
+        .text-input-md{
+            color: white;
+        }
+
+        .button-inner{
+            color: white !important;
+        }
+
+        .margin-input-top{
+            margin-top: 10px;
+        }
+    }
 }

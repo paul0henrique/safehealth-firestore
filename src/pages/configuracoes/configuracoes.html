@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,30 +8,36 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="content">
 
+  <ion-grid class="grid-list">
+    <ion-row align-items-center justify-content-center>
+      <ion-col align-self-center col-12 col-lg-4 col-xl-4>
+          <ion-list class="content-input">
 
-  <ion-list>
+            <ion-avatar item-start>
+              <img class="foto" [src]="foto">
+            </ion-avatar>
 
-    <ion-avatar item-start>
-      <img class="foto" [src]="foto">
-    </ion-avatar>
+            <button class="botao-enviar" ion-button clear (click)="escolherFoto()">Atualizar foto</button>
+            <input type="file" #fileUserPhoto style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
 
-    <button class="botao-enviar" ion-button clear (click)="escolherFoto()">Escolher Foto</button>
-    <input type="file" #fileUserPhoto style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
+            <ion-item>
+              <ion-input type="text" [(ngModel)]="item.nome"></ion-input>
+            </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Nome</ion-label>
-      <ion-input type="text" [(ngModel)]="item.nome"></ion-input>
-    </ion-item>
+            <ion-item class="margin-input-top">
+              <ion-input type="text" [(ngModel)]="item.email"></ion-input>
+            </ion-item>
+          </ion-list>
 
-    <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input type="text" [(ngModel)]="item.email"></ion-input>
-    </ion-item>
+         <button class="filled-button" ion-button block (click)="salvar()">Salvar</button> 
 
-  </ion-list>
+       </ion-col>
+    </ion-row>
+  </ion-grid>
+      
 
-  <button ion-button block (click)="salvar()">Salvar</button>
+  
 
 </ion-content>
