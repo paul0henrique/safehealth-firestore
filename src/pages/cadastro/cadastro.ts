@@ -53,7 +53,7 @@ export class CadastroPage {
         {
           text: 'Ok',
           handler: data => {
-            this.navCtrl.pop();
+            this.navCtrl.push('LoginPage');
           }
         }
       ]
